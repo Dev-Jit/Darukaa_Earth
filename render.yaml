@@ -9,7 +9,7 @@ services:
     rootDir: backend
     plan: free
     region: oregon
-    autoDeploy: false
+    autoDeploy: true
     buildCommand: pip install -r requirements.txt
     startCommand: bash scripts/start.sh
     healthCheckPath: /health
