@@ -98,5 +98,8 @@ graphify-out/
 .DS_Store
 Thumbs.db
 
+# Local notes and agent tooling (keep off GitHub)
 PROGRESS.md
 CLAUDE.md
+.agents/
+.claude/
