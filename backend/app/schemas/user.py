@@ -42,10 +42,6 @@ class UserLogin(BaseModel):
     password: str
 
 
-class UserCreate(UserBase):
-    password: str
-
-
 class UserResponse(UserBase):
     id: UUID
     created_at: datetime

@@ -1,21 +1,9 @@
 import { NavLink } from "react-router-dom";
 import BrandMark from "./BrandMark.jsx";
-import {
-  AnalyticsIcon,
-  MethodologyIcon,
-  MonitoringIcon,
-  OverviewIcon,
-  ProjectsIcon,
-  SettingsIcon,
-} from "./icons.jsx";
+import { OverviewIcon } from "./icons.jsx";
 
 const NAV_ICONS = {
   overview: OverviewIcon,
-  projects: ProjectsIcon,
-  monitoring: MonitoringIcon,
-  analytics: AnalyticsIcon,
-  settings: SettingsIcon,
-  methodology: MethodologyIcon,
 };
 
 function initialsFromUser(user) {

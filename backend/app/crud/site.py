@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 
 from app.models.project import Project
 from app.models.site import Site
+from app.services.site_metrics_seed import seed_site_metrics
 from app.utils.geo import geojson_polygon_to_element
 
 
@@ -21,6 +22,8 @@ def create_site(
     )
     db.add(site)
     db.commit()
+    db.refresh(site)
+    seed_site_metrics(db, site, replace=False, seed=None)
     db.refresh(site)
     return site
 

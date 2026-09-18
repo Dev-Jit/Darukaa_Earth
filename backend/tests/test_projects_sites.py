@@ -1,8 +1,5 @@
 from uuid import uuid4
 
-from app.models.site import Site
-from scripts.seed_site_metrics import seed_site_metrics
-
 from conftest import INVALID_POLYGON, VALID_POLYGON
 
 
@@ -66,7 +63,7 @@ def test_project_and_site_crud_flow(pg_client, pg_auth_headers):
     metrics = pg_client.get(f"/sites/{site_id}/metrics", headers=pg_auth_headers)
     assert metrics.status_code == 200
     assert metrics.json()["site_id"] == site_id
-    assert metrics.json()["count"] == 0
+    assert metrics.json()["count"] == 24
 
 
 def test_invalid_polygon_rejected(pg_client, pg_auth_headers):
@@ -104,7 +101,7 @@ def test_unauthenticated_requests_rejected(pg_client):
     assert pg_client.post("/projects", json={"name": "No Auth"}).status_code == 401
 
 
-def test_site_metrics_after_seed(pg_client, pg_auth_headers, pg_db_session):
+def test_site_metrics_after_seed(pg_client, pg_auth_headers):
     project_id = pg_client.post(
         "/projects",
         headers=pg_auth_headers,
@@ -115,10 +112,6 @@ def test_site_metrics_after_seed(pg_client, pg_auth_headers, pg_db_session):
         headers=pg_auth_headers,
         json={"name": "Seeded Plot", "geometry": VALID_POLYGON},
     ).json()["id"]
-
-    site = pg_db_session.query(Site).filter(Site.id == site_id).one()
-    created = seed_site_metrics(pg_db_session, site, replace=False, seed=42)
-    assert created == 24
 
     all_metrics = pg_client.get(f"/sites/{site_id}/metrics", headers=pg_auth_headers)
     assert all_metrics.status_code == 200

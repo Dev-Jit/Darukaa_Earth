@@ -4,7 +4,6 @@ import { useAuth } from "../auth/AuthContext.jsx";
 import AppHeader from "./ui/AppHeader.jsx";
 import Button from "./ui/Button.jsx";
 import Sidebar from "./ui/Sidebar.jsx";
-import StatusIndicator from "./ui/StatusIndicator.jsx";
 import { MenuIcon } from "./ui/icons.jsx";
 
 const NAV_SECTIONS = [
@@ -86,11 +85,7 @@ export default function AppShell() {
               <MenuIcon />
             </Button>
           }
-        >
-          <div className="header-meta">
-            <StatusIndicator tone="water" label="Telemetry Live" />
-          </div>
-        </AppHeader>
+        />
         <main className="app-main">
           <Outlet />
         </main>

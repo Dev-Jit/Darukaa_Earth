@@ -10,12 +10,11 @@ from app.schemas.project import (
 )
 from app.schemas.site import SiteCreateBody, SiteResponse
 from app.schemas.site_metric import SiteMetricResponse, SiteMetricsListResponse
-from app.schemas.user import UserBase, UserCreate, UserRegister, UserResponse
+from app.schemas.user import UserBase, UserRegister, UserResponse
 
 __all__ = [
     "HealthCheckResponse",
     "UserBase",
-    "UserCreate",
     "UserRegister",
     "UserResponse",
     "ProjectBase",

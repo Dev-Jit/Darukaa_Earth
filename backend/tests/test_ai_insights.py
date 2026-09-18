@@ -5,12 +5,13 @@ from unittest.mock import patch
 from uuid import uuid4
 
 from app.models.site import Site
+from app.models.site_metric import SiteMetric
 from app.services.ai_insights import (
     build_insight_payload,
     parse_insight_response,
     percent_change,
 )
-from scripts.seed_site_metrics import seed_site_metrics
+from app.services.site_metrics_seed import seed_site_metrics
 
 from conftest import VALID_POLYGON
 
@@ -90,8 +91,10 @@ def test_ai_insights_unauthenticated(pg_client):
     assert pg_client.get(f"/sites/{uuid4()}/ai-insights").status_code == 401
 
 
-def test_ai_insights_no_data(pg_client, pg_auth_headers):
+def test_ai_insights_no_data(pg_client, pg_auth_headers, pg_db_session):
     site_id = _create_site(pg_client, pg_auth_headers)
+    pg_db_session.query(SiteMetric).filter(SiteMetric.site_id == site_id).delete()
+    pg_db_session.commit()
     response = pg_client.get(f"/sites/{site_id}/ai-insights", headers=pg_auth_headers)
     assert response.status_code == 200
     assert response.json()["status"] == "no_data"

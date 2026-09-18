@@ -17,36 +17,6 @@ export const palette = {
   dangerEdge: "#E4D0CC",
 };
 
-export const fonts = {
-  heading: 'Spectral, Georgia, "Times New Roman", serif',
-  body: '"IBM Plex Sans", system-ui, sans-serif',
-};
-
-export const radii = {
-  ui: 8,
-};
-
-export const shadows = {
-  none: "none",
-  hairline: "0 1px 0 rgba(26, 38, 32, 0.04)",
-};
-
-export const typeScale = {
-  kicker: "0.6875rem",
-  caption: "0.8125rem",
-  body: "0.9375rem",
-  section: "1.25rem",
-  pageTitle: "1.75rem",
-  metric: "1.75rem",
-};
-
-export const status = {
-  monitoring: palette.canopy,
-  verification: palette.loam,
-  water: palette.water,
-  idle: palette.silt,
-};
-
 export const mapSiteColors = {
   fill: palette.canopy,
   fillOpacity: 0.35,

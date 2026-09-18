@@ -103,22 +103,6 @@ h4 {
     @apply border-canopy outline-2 outline-offset-0 outline-loam/60;
   }
 
-  .search-field-wrap {
-    @apply relative min-w-[12rem] max-w-md flex-1;
-  }
-
-  .search-field {
-    @apply h-9 w-full rounded-[var(--radius-ui)] border border-edge bg-surface pr-3 pl-9 text-sm text-bark placeholder:text-silt/80;
-  }
-
-  .search-field:focus {
-    @apply border-canopy outline-2 outline-offset-0 outline-loam/60;
-  }
-
-  .search-field-icon {
-    @apply pointer-events-none absolute top-1/2 left-3 size-4 -translate-y-1/2 text-silt;
-  }
-
   .field-label {
     @apply mb-1 block text-sm font-medium text-bark;
   }
@@ -152,18 +136,6 @@ h4 {
     @apply mt-1 flex items-center gap-1.5 text-[0.75rem] font-medium;
   }
 
-  .metric-card-trend-up {
-    @apply text-canopy;
-  }
-
-  .metric-card-trend-water {
-    @apply text-water;
-  }
-
-  .metric-card-trend-loam {
-    @apply text-loam;
-  }
-
   .metric-card-unit {
     @apply ml-1.5 align-baseline text-base font-medium text-silt;
     font-family: var(--font-body);
@@ -191,59 +163,6 @@ h4 {
 
   .kpi-trend-flat {
     @apply text-silt;
-  }
-
-  .badge {
-    @apply inline-flex items-center gap-1.5 rounded-[var(--radius-ui)] border px-2 py-0.5 text-[0.6875rem] font-medium uppercase tracking-[0.08em];
-  }
-
-  .badge-monitoring {
-    @apply border-canopy/20 bg-canopy-soft text-canopy;
-  }
-
-  .badge-verification {
-    @apply border-loam/25 bg-loam-soft text-[#7a5c08];
-  }
-
-  .badge-water {
-    @apply border-water/20 bg-water-soft text-water;
-  }
-
-  .badge-neutral {
-    @apply border-edge bg-mist text-silt;
-  }
-
-  .chip {
-    @apply inline-flex items-center gap-1.5 rounded-[var(--radius-ui)] border border-transparent px-2.5 py-1 text-[0.8125rem] font-medium text-silt transition-colors hover:bg-canopy-soft hover:text-bark;
-  }
-
-  .chip-active {
-    @apply border-edge bg-surface text-bark;
-    box-shadow: var(--shadow-hairline);
-  }
-
-  .chip-count {
-    @apply text-[0.6875rem] text-silt;
-  }
-
-  .status-dot {
-    @apply inline-block size-1.5 shrink-0 rounded-full;
-  }
-
-  .status-dot-monitoring {
-    @apply bg-canopy;
-  }
-
-  .status-dot-verification {
-    @apply bg-loam;
-  }
-
-  .status-dot-water {
-    @apply bg-water;
-  }
-
-  .status-dot-idle {
-    @apply bg-silt;
   }
 
   .app-shell {
@@ -306,10 +225,6 @@ h4 {
     @apply flex min-w-0 flex-wrap items-center justify-end gap-2;
   }
 
-  .header-meta {
-    @apply hidden items-center gap-2 sm:flex;
-  }
-
   .breadcrumb-list {
     @apply flex flex-wrap items-center gap-2 text-sm text-silt;
   }
@@ -340,14 +255,6 @@ h4 {
     @apply text-xl font-semibold text-bark;
   }
 
-  .section-header {
-    @apply mb-4 flex flex-wrap items-end justify-between gap-3;
-  }
-
-  .page-header {
-    @apply mb-8 flex flex-wrap items-start justify-between gap-4;
-  }
-
   .page-description {
     @apply mt-2 max-w-3xl text-silt;
   }
@@ -368,34 +275,6 @@ h4 {
     @apply text-[0.8125rem] text-silt;
   }
 
-  .kicker {
-    @apply text-[0.6875rem] font-medium uppercase tracking-[0.12em] text-silt;
-  }
-
-  .data-table-wrap {
-    @apply surface overflow-x-auto;
-  }
-
-  .data-table {
-    @apply w-full min-w-[32rem] border-collapse text-left text-sm;
-  }
-
-  .data-table th {
-    @apply border-b border-edge bg-mist px-4 py-2.5 text-[0.6875rem] font-medium uppercase tracking-[0.1em] text-silt;
-  }
-
-  .data-table td {
-    @apply border-b border-edge px-4 py-3 text-bark;
-  }
-
-  .data-table tbody tr:hover td {
-    @apply bg-canopy-soft/50;
-  }
-
-  .data-table tr:last-child td {
-    @apply border-b-0;
-  }
-
   .empty-state {
     @apply surface border-dashed px-6 py-12 text-center;
   }
@@ -411,22 +290,6 @@ h4 {
   .loading-bar-fill {
     @apply h-full w-1/2 rounded-full bg-canopy/40;
     animation: loading-slide 1.4s ease-in-out infinite;
-  }
-
-  .alert {
-    @apply rounded-[var(--radius-ui)] border px-4 py-3 text-sm;
-  }
-
-  .alert-danger {
-    @apply border-danger-edge bg-danger-soft text-danger;
-  }
-
-  .alert-warning {
-    @apply border-loam/25 bg-loam-soft text-[#7a5c08];
-  }
-
-  .alert-info {
-    @apply border-water/20 bg-water-soft text-water;
   }
 
   .brand-lockup {
