@@ -1,0 +1,15 @@
+{
+  "name": "darukaa-earth",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "prepare": "husky",
+    "lint": "npm run lint --prefix frontend && node scripts/run-backend-tool.mjs ruff check backend && node scripts/run-backend-tool.mjs black --check backend",
+    "format": "npm run format --prefix frontend && node scripts/run-backend-tool.mjs black backend && node scripts/run-backend-tool.mjs ruff check --fix backend"
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3"
+  }
+}
